@@ -1,0 +1,26 @@
+
+<div class="pokemonsList">
+	<table class="table">
+		<thead>
+			<tr>
+				<th width="10%" scope="col">#</th>
+				<th width="25%" scope="col">Pokemon Image</th>
+				<th width="25%" scope="col">Pokemon name</th>
+				<th width="35%" scope="col">Api Endpoint</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr (click)="setSelectedPokemonID(i)"
+				*ngFor="let pokemon of pokemons; let i = index"
+			>
+				<td>{{getIdFromIndex(i)}}</td>
+				<td><img height="50" width="50" src="../../../assets//images/{{getIdFromIndex(i)}}.svg" alt=""></td>
+				<td>{{ pokemon.name }}</td>
+				<td>{{ pokemon.url }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ngb-pagination class="pagination" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshPokemons()">
+	</ngb-pagination>
+</div>

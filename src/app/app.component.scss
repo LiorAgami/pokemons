@@ -1,0 +1,24 @@
+.mainContainer {
+	width: 100%;
+	padding: 50px;
+
+	.itemView {
+		width: 100%;
+		max-width: 600px;
+	}
+
+	.itemsList {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.mainContainer {
+		flex-direction: column !important;
+
+		.itemView {
+			margin-top: 50px;
+			max-width: unset;
+		}
+	}
+  }

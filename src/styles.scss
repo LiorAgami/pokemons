@@ -1,0 +1,63 @@
+body {
+	height: 100vh;
+	background: #161C25;
+	color: #fff;
+	overflow-y: auto;
+}
+
+.table {
+
+	background: #1F2834;
+	color: #fff;
+	border: none;
+
+	thead {
+		border-top-left-radius: 2px;
+		background: #303E4E;
+	}
+
+	td, th {
+		padding: .5 rem !important;
+		vertical-align: middle;
+	}
+
+	tbody tr {
+		cursor: pointer;
+	}
+
+	tr, thead {
+		border: 5px solid #161C25 !important;
+	}
+
+}
+
+.page-item {
+
+	.page-link {
+		color: #fff !important;
+		background-color: #1F2834 !important;
+		border: 1px solid #1F2823 !important;
+	}
+
+	&.active {
+		.page-link {
+			background-color: #303E4E !important;
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

@@ -1,0 +1,65 @@
+<div class="title d-flex p-5 align-items-center justify-content-center">
+	<fa-icon (click)="close()" class="close" [icon]="faTimesCircle"></fa-icon>
+	<span>
+		<img *ngIf="pokemonID" height="100" width="100" src="../../../assets/images/{{pokemonID}}.svg" alt="">
+	</span>
+	<h1 class="text-left w-100 pl-4">{{pokemon?.name}}</h1>
+</div>
+
+<div *ngIf="pokemon" class="body p-5">
+
+	<p>Hello there, I'm {{pokemon.name}} 🖐 !!</p>
+	<p>Go ahead and get to know me better.</p>
+
+	<nav ngbNav #nav="ngbNav" class="nav-tabs">
+
+		<!-- Abilities -->
+
+		<ng-container ngbNavItem>
+			<a ngbNavLink>My abilities</a>
+			<ng-template ngbNavContent>
+				<p *ngFor="let ability of pokemon.abilities">
+					<span>&#9733; <b>{{ability.ability.name}}</b> &#9733;</span>
+				</p>
+			</ng-template>
+		</ng-container>
+
+		<!-- Moves -->
+
+		<ng-container ngbNavItem>
+			<a ngbNavLink>My moves</a>
+			<ng-template ngbNavContent>
+				<div class="movesList">
+					<table class="table">
+						<thead>
+							<tr>
+								<th width="20%" scope="col">#</th>
+								<th width="80%" scope="col">Move</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let move of pokemon.moves; let i = index">
+								<td>{{ i }}</td>
+								<td>{{ move.move.name }}</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</ng-template>
+		</ng-container>
+
+		<!-- Specialization -->
+
+		<ng-container ngbNavItem>
+			<a ngbNavLink>I'm specialized with</a>
+			<ng-template ngbNavContent>
+				<p *ngFor="let type of pokemon.types">
+					<span>&#9733; <b>{{type.type.name}}</b> &#9733;</span>
+				</p>
+			</ng-template>
+		</ng-container>
+	</nav>
+
+	<div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

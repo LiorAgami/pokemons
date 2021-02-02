@@ -1,0 +1,23 @@
+section {
+	width: 100%;
+	max-width: 600px;
+}
+
+.title {
+	background: #303E4E;
+	color: #fff;
+	position: relative;
+
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		color: #fff;
+		cursor: pointer;
+	}
+}
+
+.movesList {
+	max-height: 300px;
+	overflow-y: auto;
+}
